@@ -35,16 +35,13 @@
 // otherwise will default to 10 bits, as in regular Arduino-based boards.
 #if defined(__arm__)
 #define ADC_BITS    12
+#elif defined(ESP32)
+#define ADC_BITS    12
 #else
 #define ADC_BITS    10
 #endif
 
-#if defined(ESP32)
-#define ADC_BITS    12
-#endif
-
 #define ADC_COUNTS  (1<<ADC_BITS)
-
 
 class EnergyMonitor
 {
